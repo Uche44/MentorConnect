@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sign in or create your MentorConnect account">
+  <title>Sign In | MentorConnect</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/components.css">
+  
+  <style>
+    body {
+      background-color: var(--color-bg-secondary);
+    }
+    
+    .auth-container {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: var(--space-xl);
+    }
+    
+    .auth-card {
+      background-color: var(--color-bg-primary);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-xl);
+      width: 100%;
+      max-width: 500px;
+      overflow: hidden;
+    }
+    
+    .auth-header {
+      text-align: center;
+      padding: var(--space-2xl) var(--space-xl) var(--space-lg);
+    }
+    
+    .auth-logo {
+      font-family: var(--font-heading);
+      font-size: var(--font-size-2xl);
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: var(--space-md);
+    }
+    
+    .auth-tabs {
+      display: flex;
+      border-bottom: 2px solid var(--color-bg-tertiary);
+    }
+    
+    .auth-tab {
+      flex: 1;
+      padding: var(--space-md);
+      text-align: center;
+      font-weight: 600;
+      color: var(--color-text-secondary);
+      cursor: pointer;
+      border-bottom: 3px solid transparent;
+      margin-bottom: -2px;
+      transition: all var(--transition-fast);
+    }
+    
+    .auth-tab:hover {
+      color: var(--color-primary);
+    }
+    
+    .auth-tab.active {
+      color: var(--color-primary);
+      border-bottom-color: var(--color-primary);
+    }
+    
+    .auth-body {
+      padding: var(--space-2xl) var(--space-xl);
+    }
+    
+    .auth-footer {
+      text-align: center;
+      padding: var(--space-lg) var(--space-xl) var(--space-2xl);
+      font-size: var(--font-size-sm);
+      color: var(--color-text-secondary);
+    }
+    
+    .form-input.error {
+      border-color: var(--color-error);
+    }
+  </style>
+</head>
+<body>
+  <div class="auth-container">
+    <div class="auth-card">
+      <!-- Header -->
+      <div class="auth-header">
+        <div class="auth-logo">MentorConnect</div>
+        <p class="text-secondary">Welcome! Please sign in or create an account</p>
+      </div>
+      
+      <!-- Tabs -->
+      <div class="auth-tabs">
+        <div class="auth-tab active" id="loginTab">Sign In</div>
+        <div class="auth-tab" id="signupTab">Sign Up</div>
+      </div>
+      
+      <!-- Login Form -->
+      <div id="loginFormContainer" class="auth-body">
+        <form id="loginForm">
+          <div class="form-group">
+            <label for="loginEmail" class="form-label">Email Address</label>
+            <input 
+              type="email" 
+              id="loginEmail" 
+              class="form-input" 
+              placeholder="you@example.com"
+              required
+            >
+          </div>
+          
+          <div class="form-group">
+            <label for="loginPassword" class="form-label">Password</label>
+            <input 
+              type="password" 
+              id="loginPassword" 
+              class="form-input" 
+              placeholder="Enter your password"
+              required
+            >
+          </div>
+          
+          <button type="submit" class="btn btn-primary btn-full btn-lg">
+            Sign In
+          </button>
+        </form>
+        
+        <div class="auth-footer">
+          <p>Demo credentials: Use any mentor email (e.g., sarah.johnson@mentor.com) with password: demo123</p>
+        </div>
+      </div>
+      
+      <!-- Signup Form -->
+      <div id="signupFormContainer" class="auth-body hidden">
+        <form id="signupForm">
+          <div class="grid grid-2">
+            <div class="form-group">
+              <label for="signupFirstName" class="form-label">First Name</label>
+              <input 
+                type="text" 
+                id="signupFirstName" 
+                class="form-input" 
+                placeholder="John"
+                required
+              >
+            </div>
+            
+            <div class="form-group">
+              <label for="signupLastName" class="form-label">Last Name</label>
+              <input 
+                type="text" 
+                id="signupLastName" 
+                class="form-input" 
+                placeholder="Doe"
+                required
+              >
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="signupEmail" class="form-label">Email Address</label>
+            <input 
+              type="email" 
+              id="signupEmail" 
+              class="form-input" 
+              placeholder="you@example.com"
+              required
+            >
+          </div>
+          
+          <div class="form-group">
+            <label for="signupPhone" class="form-label">Phone Number</label>
+            <input 
+              type="tel" 
+              id="signupPhone" 
+              class="form-input" 
+              placeholder="555-123-4567"
+              required
+            >
+          </div>
+          
+          <div class="form-group">
+            <label for="signupPassword" class="form-label">Password</label>
+            <input 
+              type="password" 
+              id="signupPassword" 
+              class="form-input" 
+              placeholder="At least 6 characters"
+              required
+            >
+          </div>
+          
+          <div class="form-group">
+            <label for="signupConfirmPassword" class="form-label">Confirm Password</label>
+            <input 
+              type="password" 
+              id="signupConfirmPassword" 
+              class="form-input" 
+              placeholder="Re-enter your password"
+              required
+            >
+          </div>
+          
+          <div class="form-group">
+            <label for="signupRole" class="form-label">I am a...</label>
+            <select id="signupRole" class="form-select" required>
+              <option value="">Select your role</option>
+              <option value="student">Student</option>
+              <option value="mentor">Mentor</option>
+            </select>
+          </div>
+          
+          <!-- Specialty Field (for mentors only) -->
+          <div id="specialtyField" class="form-group hidden">
+            <label class="form-label">Areas of Expertise</label>
+            <div class="form-check">
+              <input type="checkbox" id="specialty1" name="specialty" value="Career Advice" class="form-check-input">
+              <label for="specialty1" class="form-check-label">Career Advice</label>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" id="specialty2" name="specialty" value="Mental Health" class="form-check-input">
+              <label for="specialty2" class="form-check-label">Mental Health</label>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" id="specialty3" name="specialty" value="Academic Advising" class="form-check-input">
+              <label for="specialty3" class="form-check-label">Academic Advising</label>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" id="specialty4" name="specialty" value="Study Skills" class="form-check-input">
+              <label for="specialty4" class="form-check-label">Study Skills</label>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" id="specialty5" name="specialty" value="Tech Industry" class="form-check-input">
+              <label for="specialty5" class="form-check-label">Tech Industry</label>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" id="specialty6" name="specialty" value="Interview Prep" class="form-check-input">
+              <label for="specialty6" class="form-check-label">Interview Prep</label>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="signupBio" class="form-label">Bio (Optional)</label>
+            <textarea 
+              id="signupBio" 
+              class="form-textarea" 
+              placeholder="Tell us a bit about yourself..."
+            ></textarea>
+          </div>
+          
+          <button type="submit" class="btn btn-primary btn-full btn-lg">
+            Create Account
+          </button>
+        </form>
+      </div>
+      
+      <!-- Footer -->
+      <div class="auth-footer" style="border-top: 1px solid var(--color-bg-tertiary);">
+        <a href="index.html" class="text-primary">← Back to Home</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container"></div>
+
+  <!-- Scripts -->
+  <script src="js/storage.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

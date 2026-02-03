@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <meta
+      name="description"
+      content="Connect with mentors, academic advisors, and counselors for mental health and career guidance"
+    />
+    <title>Student-Mentor Portal | Connect & Grow</title>
+
+    <!-- Google Fonts -->
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Stylesheets -->
+    <link
+      rel="stylesheet"
+      href="styles/main.css"
+    />
+    <link
+      rel="stylesheet"
+      href="styles/components.css"
+    />
+
+    <style>
+      /* Hero Section */
+      .hero {
+        position: relative;
+        min-height: 600px;
+        display: flex;
+        align-items: center;
+        background:
+          linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+          url("assets/images/hero.jpg");
+
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        color: var(--color-text-inverse);
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><path d="M0,300 Q300,100 600,300 T1200,300 L1200,600 L0,600 Z" fill="rgba(255,255,255,0.05)"/></svg>')
+          no-repeat center bottom;
+        background-size: cover;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 1;
+      }
+
+      .hero h1 {
+        font-size: var(--font-size-5xl);
+        margin-bottom: var(--space-lg);
+        color: var(--color-text-inverse);
+      }
+
+      .hero p {
+        font-size: var(--font-size-xl);
+        margin-bottom: var(--space-2xl);
+        color: rgba(255, 255, 255, 0.9);
+        max-width: 600px;
+      }
+
+      .hero-buttons {
+        display: flex;
+        gap: var(--space-md);
+        flex-wrap: wrap;
+      }
+
+      .btn-light {
+        background-color: var(--color-bg-primary);
+        color: var(--color-primary);
+      }
+
+      .btn-light:hover {
+        background-color: var(--color-bg-secondary);
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-lg);
+      }
+
+      /* Features Section */
+      .feature-card {
+        text-align: center;
+        padding: var(--space-2xl);
+      }
+
+      .feature-icon {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto var(--space-lg);
+        background: linear-gradient(
+          135deg,
+          var(--color-primary-pale) 0%,
+          var(--color-primary-light) 100%
+        );
+        border-radius: var(--radius-xl);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2.5rem;
+      }
+
+      .feature-card h3 {
+        margin-bottom: var(--space-md);
+      }
+
+      /* CTA Section */
+      .cta-section {
+        background:
+          linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+          url("assets/images/footer.jpg");
+
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        /* color: var(--color-text-inverse); */
+        text-align: center;
+        padding: var(--space-3xl) 0;
+      }
+
+      .cta-section h2 {
+        color: white;
+        margin-bottom: var(--space-lg);
+      }
+
+      .cta-section p {
+        color: white;
+        font-size: var(--font-size-lg);
+        margin-bottom: var(--space-xl);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="navbar-container">
+        <a
+          href="index.html"
+          class="navbar-brand"
+          >MentorConnect</a
+        >
+        <ul class="navbar-nav">
+          <li>
+            <a
+              href="#features"
+              class="navbar-link"
+              >Features</a
+            >
+          </li>
+          <li>
+            <a
+              href="#how-it-works"
+              class="navbar-link"
+              >How It Works</a
+            >
+          </li>
+          <li>
+            <a
+              href="auth.html"
+              class="btn btn-primary btn-sm"
+              >Get Started</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1>Connect with caring professionals</h1>
+          <p>
+            Find the guidance you need from experienced mentors, academic
+            advisors, and counselors dedicated to supporting your mental health
+            and career growth.
+          </p>
+          <div class="hero-buttons">
+            <a
+              href="auth.html"
+              class="btn btn-lg btn-light"
+              >Get Started Today</a
+            >
+            <a
+              href="#features"
+              class="btn btn-lg btn-outline"
+              style="border-color: white; color: white"
+              >Learn More</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section
+      id="features"
+      class="section"
+    >
+      <div class="container">
+        <div class="text-center mb-xl">
+          <h2>Comprehensive support for your journey</h2>
+          <p class="text-lg text-secondary">
+            Everything you need to succeed, all in one place
+          </p>
+        </div>
+
+        <div class="grid grid-3">
+          <div class="feature-card">
+            <div class="feature-icon">🎯</div>
+            <h3>Career Guidance</h3>
+            <p>
+              Connect with industry professionals for career advice, resume
+              reviews, and interview preparation.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">🧠</div>
+            <h3>Mental Health Support</h3>
+            <p>
+              Access licensed counselors for stress management, wellness
+              coaching, and emotional support.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">📚</div>
+            <h3>Academic Advising</h3>
+            <p>
+              Get help with study strategies, course selection, and academic
+              planning from experienced advisors.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">📅</div>
+            <h3>Easy Scheduling</h3>
+            <p>
+              Book appointments with mentors at times that work for you with our
+              intuitive scheduling system.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">💬</div>
+            <h3>Personalized Matching</h3>
+            <p>
+              Find mentors who specialize in your areas of interest and career
+              goals.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">🔒</div>
+            <h3>Confidential & Secure</h3>
+            <p>
+              Your privacy matters. All sessions are confidential and your data
+              is secure.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section
+      id="how-it-works"
+      class="section"
+      style="background-color: var(--color-bg-secondary)"
+    >
+      <div class="container">
+        <div class="text-center mb-xl">
+          <h2>How it works</h2>
+          <p class="text-lg text-secondary">
+            Get started in three simple steps
+          </p>
+        </div>
+
+        <div class="grid grid-3">
+          <div class="card text-center">
+            <div class="feature-icon">1</div>
+            <h3>Create Your Account</h3>
+            <p>
+              Sign up as a student or mentor in just a few minutes. Tell us
+              about yourself and your goals.
+            </p>
+          </div>
+
+          <div class="card text-center">
+            <div class="feature-icon">2</div>
+            <h3>Browse & Connect</h3>
+            <p>
+              Explore our network of mentors and find the perfect match for your
+              needs and interests.
+            </p>
+          </div>
+
+          <div class="card text-center">
+            <div class="feature-icon">3</div>
+            <h3>Schedule Sessions</h3>
+            <p>
+              Book appointments at your convenience and start your journey
+              toward personal and professional growth.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container">
+        <h2>Ready to get started?</h2>
+        <p>Join thousands of students finding guidance and support</p>
+        <a
+          href="auth.html"
+          class="btn btn-lg btn-light"
+          >Create Your Free Account</a
+        >
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer
+      style="
+        background-color: var(--color-primary);
+        color: var(--color-text-inverse);
+        padding: var(--space-2xl) 0;
+        text-align: center;
+      "
+    >
+      <div class="container">
+        <p>&copy; 2026 MentorConnect. All rights reserved.</p>
+        <p
+          style="
+            margin-top: var(--space-md);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: var(--font-size-sm);
+          "
+        >
+          Empowering students through meaningful connections
+        </p>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/storage.js"></script>
+    <script src="js/utils.js"></script>
+  </body>
+</html>

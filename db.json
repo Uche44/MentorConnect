@@ -1,0 +1,502 @@
+{
+  "users": [
+    {
+      "id": "seed_1",
+      "email": "sarah.johnson@mentor.com",
+      "password": "ZGVtbzEyMw==",
+      "role": "mentor",
+      "firstName": "Sarah",
+      "lastName": "Johnson",
+      "avatar": "",
+      "phone": "555-0101",
+      "bio": "Licensed counselor specializing in mental health and wellness. 10+ years of experience helping students navigate stress and anxiety.",
+      "specialty": [
+        "Mental Health",
+        "Stress Management"
+      ],
+      "availability": [],
+      "createdAt": "2026-02-03T12:00:00.000Z"
+    },
+    {
+      "id": "seed_2",
+      "email": "michael.chen@mentor.com",
+      "password": "ZGVtbzEyMw==",
+      "role": "mentor",
+      "firstName": "Michael",
+      "lastName": "Chen",
+      "avatar": "",
+      "phone": "555-0102",
+      "bio": "Career advisor with expertise in tech industry transitions. Former software engineer turned career coach.",
+      "specialty": [
+        "Career Advice",
+        "Tech Industry"
+      ],
+      "availability": [],
+      "createdAt": "2026-02-03T12:00:00.000Z"
+    },
+    {
+      "id": "seed_3",
+      "email": "dr.williams@mentor.com",
+      "password": "ZGVtbzEyMw==",
+      "role": "mentor",
+      "firstName": "Emily",
+      "lastName": "Williams",
+      "avatar": "",
+      "phone": "555-0103",
+      "bio": "Academic advisor with Ph.D. in Education. Specializing in study strategies and academic planning.",
+      "specialty": [
+        "Academic Advising",
+        "Study Skills"
+      ],
+      "availability": [],
+      "createdAt": "2026-02-03T12:00:00.000Z"
+    },
+    {
+      "id": "seed_4",
+      "email": "james.rodriguez@mentor.com",
+      "password": "ZGVtbzEyMw==",
+      "role": "mentor",
+      "firstName": "James",
+      "lastName": "Rodriguez",
+      "avatar": "",
+      "phone": "555-0104",
+      "bio": "Career counselor focusing on resume building, interview prep, and professional development.",
+      "specialty": [
+        "Career Advice",
+        "Interview Prep"
+      ],
+      "availability": [],
+      "createdAt": "2026-02-03T12:00:00.000Z"
+    },
+    {
+      "id": "seed_5",
+      "email": "lisa.patel@mentor.com",
+      "password": "ZGVtbzEyMw==",
+      "role": "mentor",
+      "firstName": "Lisa",
+      "lastName": "Patel",
+      "avatar": "",
+      "phone": "555-0105",
+      "bio": "Mental health counselor specializing in student wellness, mindfulness, and work-life balance.",
+      "specialty": [
+        "Mental Health",
+        "Mindfulness"
+      ],
+      "availability": [],
+      "createdAt": "2026-02-03T12:00:00.000Z"
+    },
+    {
+      "id": "id_1770123668591_ygkzsfknj",
+      "firstName": "ment",
+      "lastName": "john",
+      "email": "ment@gmail.com",
+      "phone": "09123456789",
+      "password": "MTIzNDU2Nw==",
+      "role": "mentor",
+      "bio": "an advisor",
+      "specialty": [
+        "Academic Advising"
+      ],
+      "avatar": "",
+      "availability": [
+        {
+          "date": "2026-02-04",
+          "time": "10:00",
+          "duration": 60
+        },
+        {
+          "date": "2026-02-04",
+          "time": "16:00",
+          "duration": 60
+        },
+        {
+          "date": "2026-02-04",
+          "time": "09:00",
+          "duration": 60
+        },
+        {
+          "date": "2026-02-05",
+          "time": "10:00",
+          "duration": 60
+        },
+        {
+          "date": "2026-02-05",
+          "time": "16:00",
+          "duration": 60
+        },
+        {
+          "date": "2026-02-05",
+          "time": "14:00",
+          "duration": 60
+        },
+        {
+          "date": "2026-02-05",
+          "time": "15:00",
+          "duration": 60
+        },
+        {
+          "date": "2026-02-06",
+          "time": "10:00",
+          "duration": 60
+        },
+        {
+          "date": "2026-02-06",
+          "time": "16:00",
+          "duration": 60
+        },
+        {
+          "date": "2026-02-09",
+          "time": "16:00",
+          "duration": 60
+        },
+        {
+          "date": "2026-02-09",
+          "time": "15:00",
+          "duration": 60
+        },
+        {
+          "date": "2026-02-09",
+          "time": "11:00",
+          "duration": 60
+        },
+        {
+          "date": "2026-02-10",
+          "time": "14:00",
+          "duration": 60
+        },
+        {
+          "date": "2026-02-10",
+          "time": "16:00",
+          "duration": 60
+        },
+        {
+          "date": "2026-02-10",
+          "time": "10:00",
+          "duration": 60
+        },
+        {
+          "date": "2026-02-10",
+          "time": "09:00",
+          "duration": 60
+        },
+        {
+          "date": "2026-02-11",
+          "time": "09:00",
+          "duration": 60
+        },
+        {
+          "date": "2026-02-11",
+          "time": "14:00",
+          "duration": 60
+        },
+        {
+          "date": "2026-02-12",
+          "time": "14:00",
+          "duration": 60
+        },
+        {
+          "date": "2026-02-12",
+          "time": "10:00",
+          "duration": 60
+        },
+        {
+          "date": "2026-02-12",
+          "time": "09:00",
+          "duration": 60
+        },
+        {
+          "date": "2026-02-12",
+          "time": "15:00",
+          "duration": 60
+        },
+        {
+          "date": "2026-02-13",
+          "time": "14:00",
+          "duration": 60
+        },
+        {
+          "date": "2026-02-13",
+          "time": "09:00",
+          "duration": 60
+        },
+        {
+          "date": "2026-02-16",
+          "time": "16:00",
+          "duration": 60
+        },
+        {
+          "date": "2026-02-16",
+          "time": "09:00",
+          "duration": 60
+        },
+        {
+          "date": "2026-02-16",
+          "time": "11:00",
+          "duration": 60
+        },
+        {
+          "date": "2026-02-17",
+          "time": "10:00",
+          "duration": 60
+        },
+        {
+          "date": "2026-02-17",
+          "time": "16:00",
+          "duration": 60
+        },
+        {
+          "date": "2026-02-17",
+          "time": "09:00",
+          "duration": 60
+        }
+      ],
+      "createdAt": "2026-02-03T13:01:08.591Z"
+    },
+    {
+      "id": "id_1770132277436_dsl8z4l4y",
+      "firstName": "menti",
+      "lastName": "john",
+      "email": "your@gmail.com",
+      "phone": "09136601904",
+      "password": "MTIzNDU2Nw==",
+      "role": "mentor",
+      "bio": "great one",
+      "specialty": [
+        "Career Advice",
+        "Mental Health"
+      ],
+      "avatar": "",
+      "availability": [
+        {
+          "date": "2026-02-04",
+          "time": "09:00",
+          "duration": 60
+        },
+        {
+          "date": "2026-02-04",
+          "time": "10:00",
+          "duration": 60
+        },
+        {
+          "date": "2026-02-04",
+          "time": "16:00",
+          "duration": 60
+        },
+        {
+          "date": "2026-02-05",
+          "time": "09:00",
+          "duration": 60
+        },
+        {
+          "date": "2026-02-05",
+          "time": "10:00",
+          "duration": 60
+        },
+        {
+          "date": "2026-02-06",
+          "time": "16:00",
+          "duration": 60
+        },
+        {
+          "date": "2026-02-06",
+          "time": "09:00",
+          "duration": 60
+        },
+        {
+          "date": "2026-02-06",
+          "time": "14:00",
+          "duration": 60
+        },
+        {
+          "date": "2026-02-06",
+          "time": "15:00",
+          "duration": 60
+        },
+        {
+          "date": "2026-02-09",
+          "time": "10:00",
+          "duration": 60
+        },
+        {
+          "date": "2026-02-09",
+          "time": "14:00",
+          "duration": 60
+        },
+        {
+          "date": "2026-02-10",
+          "time": "11:00",
+          "duration": 60
+        },
+        {
+          "date": "2026-02-10",
+          "time": "15:00",
+          "duration": 60
+        },
+        {
+          "date": "2026-02-10",
+          "time": "14:00",
+          "duration": 60
+        },
+        {
+          "date": "2026-02-10",
+          "time": "10:00",
+          "duration": 60
+        },
+        {
+          "date": "2026-02-11",
+          "time": "15:00",
+          "duration": 60
+        },
+        {
+          "date": "2026-02-11",
+          "time": "11:00",
+          "duration": 60
+        },
+        {
+          "date": "2026-02-11",
+          "time": "09:00",
+          "duration": 60
+        },
+        {
+          "date": "2026-02-12",
+          "time": "11:00",
+          "duration": 60
+        },
+        {
+          "date": "2026-02-12",
+          "time": "16:00",
+          "duration": 60
+        },
+        {
+          "date": "2026-02-13",
+          "time": "15:00",
+          "duration": 60
+        },
+        {
+          "date": "2026-02-13",
+          "time": "11:00",
+          "duration": 60
+        },
+        {
+          "date": "2026-02-13",
+          "time": "16:00",
+          "duration": 60
+        },
+        {
+          "date": "2026-02-13",
+          "time": "14:00",
+          "duration": 60
+        },
+        {
+          "date": "2026-02-16",
+          "time": "15:00",
+          "duration": 60
+        },
+        {
+          "date": "2026-02-16",
+          "time": "14:00",
+          "duration": 60
+        },
+        {
+          "date": "2026-02-17",
+          "time": "10:00",
+          "duration": 60
+        },
+        {
+          "date": "2026-02-17",
+          "time": "11:00",
+          "duration": 60
+        },
+        {
+          "date": "2026-02-17",
+          "time": "14:00",
+          "duration": 60
+        },
+        {
+          "date": "2026-02-17",
+          "time": "16:00",
+          "duration": 60
+        }
+      ],
+      "createdAt": "2026-02-03T15:24:37.436Z"
+    },
+    {
+      "id": "id_1770132595245_z4axi16ys",
+      "firstName": "me",
+      "lastName": "you",
+      "email": "you@gmail.com",
+      "phone": "09123456789",
+      "password": "MTIzNDU2Nw==",
+      "role": "student",
+      "bio": "good",
+      "specialty": [],
+      "avatar": "",
+      "availability": [],
+      "createdAt": "2026-02-03T15:29:55.245Z"
+    }
+  ],
+  "appointments": [
+    {
+      "id": "id_1770130391221_8kdk7v1bq",
+      "studentId": "id_1770121133576_uw5i0edaa",
+      "mentorId": "id_1770123668591_ygkzsfknj",
+      "date": "2026-02-05",
+      "time": "16:00",
+      "duration": 60,
+      "type": "Career Advice",
+      "notes": "a lot",
+      "meetingLink": "",
+      "status": "pending",
+      "createdAt": "2026-02-03T14:53:11.221Z",
+      "updatedAt": "2026-02-03T14:53:11.221Z"
+    },
+    {
+      "id": "id_1770132348155_me7sikukq",
+      "studentId": "id_1770121133576_uw5i0edaa",
+      "mentorId": "id_1770132277436_dsl8z4l4y",
+      "date": "2026-02-11",
+      "time": "09:00",
+      "duration": 60,
+      "type": "Mental Health",
+      "meetingType": "physical",
+      "location": "Enugu Airport, Nigeria",
+      "meetingLink": "",
+      "notes": "stuff hh?",
+      "status": "pending",
+      "createdAt": "2026-02-03T15:25:48.155Z",
+      "updatedAt": "2026-02-03T15:25:48.155Z"
+    },
+    {
+      "id": "id_1770132620157_wow1qa5ha",
+      "studentId": "id_1770132595245_z4axi16ys",
+      "mentorId": "id_1770132277436_dsl8z4l4y",
+      "date": "2026-02-05",
+      "time": "10:00",
+      "duration": 60,
+      "type": "Mental Health",
+      "meetingType": "physical",
+      "location": "Enugu Airport, Nigeria",
+      "meetingLink": "",
+      "notes": "tfduyyguk",
+      "status": "confirmed",
+      "createdAt": "2026-02-03T15:30:20.158Z",
+      "updatedAt": "2026-02-03T15:31:05.735Z"
+    },
+    {
+      "id": "id_1770135551980_209uy04ki",
+      "studentId": "id_1770132595245_z4axi16ys",
+      "mentorId": "id_1770132277436_dsl8z4l4y",
+      "date": "2026-02-17",
+      "time": "14:00",
+      "duration": 60,
+      "type": "General Mentorship",
+      "meetingType": "physical",
+      "location": "Nigeria",
+      "meetingLink": "",
+      "notes": "hjbnbkjjk",
+      "status": "confirmed",
+      "createdAt": "2026-02-03T16:19:11.980Z",
+      "updatedAt": "2026-02-03T16:19:32.935Z"
+    }
+  ]
+}

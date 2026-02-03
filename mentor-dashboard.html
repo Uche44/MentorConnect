@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mentor Dashboard - Manage appointments and availability">
+  <title>Mentor Dashboard | MentorConnect</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/dashboard.css">
+</head>
+<body>
+  <div class="dashboard">
+    <!-- Sidebar -->
+    <aside class="dashboard-sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">MentorConnect</div>
+        <div class="sidebar-user">
+          <div id="userAvatar"></div>
+          <div class="sidebar-user-info">
+            <h3 id="userName">Loading...</h3>
+            <p id="userRole">Mentor</p>
+            <p id="userSpecialty" style="font-size: 0.75rem; margin-top: 0.25rem;"></p>
+          </div>
+        </div>
+      </div>
+      
+      <nav>
+        <ul class="sidebar-nav">
+          <li class="sidebar-nav-item">
+            <a href="#overview" class="sidebar-nav-link active">
+              <span class="sidebar-nav-icon">📊</span>
+              <span>Overview</span>
+            </a>
+          </li>
+          <li class="sidebar-nav-item">
+            <a href="#appointments" class="sidebar-nav-link">
+              <span class="sidebar-nav-icon">📅</span>
+              <span>Appointments</span>
+            </a>
+          </li>
+          <li class="sidebar-nav-item">
+            <a href="#" class="sidebar-nav-link" id="editProfileBtn">
+              <span class="sidebar-nav-icon">⚙️</span>
+              <span>Edit Profile</span>
+            </a>
+          </li>
+          <li class="sidebar-nav-item">
+            <a href="#" class="sidebar-nav-link" id="manageAvailabilityBtn">
+              <span class="sidebar-nav-icon">🕐</span>
+              <span>Availability</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      
+      <div class="sidebar-footer">
+        <button class="btn btn-outline btn-full" id="logoutBtn" style="color: white; border-color: rgba(255,255,255,0.3);">
+          Logout
+        </button>
+      </div>
+    </aside>
+    
+    <!-- Main Content -->
+    <main class="dashboard-main">
+      <!-- Header -->
+      <div class="dashboard-header">
+        <div class="dashboard-welcome">
+          <div class="dashboard-welcome-text">
+            <h1>Welcome back! 👋</h1>
+            <p>Manage your mentorship sessions and help students succeed</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Stats Cards -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-card-header">
+            <div class="stat-card-icon">⏳</div>
+          </div>
+          <div class="stat-card-value" id="pendingCount">0</div>
+          <div class="stat-card-label">Pending Requests</div>
+        </div>
+        
+        <div class="stat-card">
+          <div class="stat-card-header">
+            <div class="stat-card-icon">📅</div>
+          </div>
+          <div class="stat-card-value" id="upcomingCount">0</div>
+          <div class="stat-card-label">Upcoming Sessions</div>
+        </div>
+        
+        <div class="stat-card">
+          <div class="stat-card-header">
+            <div class="stat-card-icon">✅</div>
+          </div>
+          <div class="stat-card-value" id="completedCount">0</div>
+          <div class="stat-card-label">Completed Sessions</div>
+        </div>
+        
+        <div class="stat-card">
+          <div class="stat-card-header">
+            <div class="stat-card-icon">👥</div>
+          </div>
+          <div class="stat-card-value" id="studentsCount">0</div>
+          <div class="stat-card-label">Total Students</div>
+        </div>
+      </div>
+      
+      <!-- Appointments Section -->
+      <section id="appointments">
+        <!-- Pending Requests -->
+        <div class="card mb-lg">
+          <div class="card-header">
+            <h2 class="card-title">Pending Requests</h2>
+            <p class="card-subtitle">Review and respond to appointment requests</p>
+          </div>
+          <div class="card-body" id="pendingAppointments">
+            <!-- Pending appointments will be loaded here -->
+          </div>
+        </div>
+        
+        <!-- Upcoming Sessions -->
+        <div class="card mb-lg">
+          <div class="card-header">
+            <h2 class="card-title">Upcoming Sessions</h2>
+            <p class="card-subtitle">Your confirmed appointments</p>
+          </div>
+          <div class="card-body" id="upcomingAppointments">
+            <!-- Upcoming appointments will be loaded here -->
+          </div>
+        </div>
+        
+        <!-- Past Sessions -->
+        <div class="card">
+          <div class="card-header">
+            <h2 class="card-title">Past Sessions</h2>
+            <p class="card-subtitle">Your session history</p>
+          </div>
+          <div class="card-body" id="pastAppointments">
+            <!-- Past appointments will be loaded here -->
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  
+  <!-- Edit Profile Modal -->
+  <div class="modal-overlay" id="editProfileModal">
+    <div class="modal">
+      <div class="modal-header">
+        <h2 class="modal-title">Edit Profile</h2>
+        <button class="modal-close" onclick="closeModal('editProfileModal')">×</button>
+      </div>
+      <div class="modal-body">
+        <form id="editProfileForm">
+          <div class="grid grid-2">
+            <div class="form-group">
+              <label for="editFirstName" class="form-label">First Name</label>
+              <input type="text" id="editFirstName" class="form-input" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="editLastName" class="form-label">Last Name</label>
+              <input type="text" id="editLastName" class="form-input" required>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="editPhone" class="form-label">Phone Number</label>
+            <input type="tel" id="editPhone" class="form-input" required>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">Areas of Expertise</label>
+            <div class="form-check">
+              <input type="checkbox" id="editSpecialty1" name="editSpecialty" value="Career Advice" class="form-check-input">
+              <label for="editSpecialty1" class="form-check-label">Career Advice</label>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" id="editSpecialty2" name="editSpecialty" value="Mental Health" class="form-check-input">
+              <label for="editSpecialty2" class="form-check-label">Mental Health</label>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" id="editSpecialty3" name="editSpecialty" value="Academic Advising" class="form-check-input">
+              <label for="editSpecialty3" class="form-check-label">Academic Advising</label>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" id="editSpecialty4" name="editSpecialty" value="Study Skills" class="form-check-input">
+              <label for="editSpecialty4" class="form-check-label">Study Skills</label>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" id="editSpecialty5" name="editSpecialty" value="Tech Industry" class="form-check-input">
+              <label for="editSpecialty5" class="form-check-label">Tech Industry</label>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" id="editSpecialty6" name="editSpecialty" value="Interview Prep" class="form-check-input">
+              <label for="editSpecialty6" class="form-check-label">Interview Prep</label>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="editBio" class="form-label">Bio</label>
+            <textarea id="editBio" class="form-textarea" placeholder="Tell students about yourself..."></textarea>
+          </div>
+          
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline" onclick="closeModal('editProfileModal')">Cancel</button>
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Manage Availability Modal -->
+  <div class="modal-overlay" id="availabilityModal">
+    <div class="modal">
+      <div class="modal-header">
+        <h2 class="modal-title">Manage Availability</h2>
+        <button class="modal-close" onclick="closeModal('availabilityModal')">×</button>
+      </div>
+      <div class="modal-body">
+        <div id="availabilityList" class="mb-lg">
+          <!-- Availability will be loaded here -->
+        </div>
+        
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline" onclick="closeModal('availabilityModal')">Close</button>
+          <button type="button" class="btn btn-primary" id="regenerateAvailabilityBtn">
+            Regenerate Availability
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container"></div>
+
+  <!-- Scripts -->
+  <script src="js/storage.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/scheduler.js"></script>
+  <script src="js/mentor-dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "name": "student-mentor-portal",
+  "version": "1.0.0",
+  "description": "Student-Mentor Portal with JSON Server backend",
+  "scripts": {
+    "start": "node server.js",
+    "server": "json-server --watch db.json --port 3000",
+    "dev": "json-server --watch db.json --port 3000"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "devDependencies": {
+    "json-server": "^0.17.4"
+  }
+}

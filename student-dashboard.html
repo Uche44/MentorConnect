@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Student Dashboard - Browse mentors and manage appointments">
+  <title>Student Dashboard | MentorConnect</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/dashboard.css">
+</head>
+<body>
+  <div class="dashboard">
+    <!-- Sidebar -->
+    <aside class="dashboard-sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">MentorConnect</div>
+        <div class="sidebar-user">
+          <div id="userAvatar"></div>
+          <div class="sidebar-user-info">
+            <h3 id="userName">Loading...</h3>
+            <p id="userRole">Student</p>
+          </div>
+        </div>
+      </div>
+      
+      <nav>
+        <ul class="sidebar-nav">
+          <li class="sidebar-nav-item">
+            <a href="#overview" class="sidebar-nav-link active">
+              <span class="sidebar-nav-icon">📊</span>
+              <span>Overview</span>
+            </a>
+          </li>
+          <li class="sidebar-nav-item">
+            <a href="#mentors" class="sidebar-nav-link">
+              <span class="sidebar-nav-icon">👥</span>
+              <span>Browse Mentors</span>
+            </a>
+          </li>
+          <li class="sidebar-nav-item">
+            <a href="#appointments" class="sidebar-nav-link">
+              <span class="sidebar-nav-icon">📅</span>
+              <span>My Appointments</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      
+      <div class="sidebar-footer">
+        <button class="btn btn-outline btn-full" id="logoutBtn" style="color: white; border-color: rgba(255,255,255,0.3);">
+          Logout
+        </button>
+      </div>
+    </aside>
+    
+    <!-- Main Content -->
+    <main class="dashboard-main">
+      <!-- Header -->
+      <div class="dashboard-header">
+        <div class="dashboard-welcome">
+          <div class="dashboard-welcome-text">
+            <h1>Welcome back! 👋</h1>
+            <p>Here's what's happening with your mentorship journey</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Stats Cards -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-card-header">
+            <div class="stat-card-icon">📅</div>
+          </div>
+          <div class="stat-card-value" id="upcomingCount">0</div>
+          <div class="stat-card-label">Upcoming Sessions</div>
+        </div>
+        
+        <div class="stat-card">
+          <div class="stat-card-header">
+            <div class="stat-card-icon">✅</div>
+          </div>
+          <div class="stat-card-value" id="completedCount">0</div>
+          <div class="stat-card-label">Completed Sessions</div>
+        </div>
+        
+        <div class="stat-card">
+          <div class="stat-card-header">
+            <div class="stat-card-icon">👤</div>
+          </div>
+          <div class="stat-card-value" id="mentorsCount">0</div>
+          <div class="stat-card-label">Active Mentors</div>
+        </div>
+      </div>
+      
+      <!-- Browse Mentors Section -->
+      <section id="mentors" class="mb-xl">
+        <div class="card">
+          <div class="card-header">
+            <h2 class="card-title">Browse Mentors</h2>
+            <p class="card-subtitle">Find the perfect mentor for your needs</p>
+          </div>
+          
+          <div class="card-body">
+            <!-- Filter Bar -->
+            <div class="filter-bar">
+              <div class="filter-bar-content">
+                <input 
+                  type="text" 
+                  id="mentorSearch" 
+                  class="form-input search-input" 
+                  placeholder="Search mentors by name or expertise..."
+                >
+                <select id="specialtyFilter" class="form-select filter-select">
+                  <option value="all">All Specialties</option>
+                  <option value="Career Advice">Career Advice</option>
+                  <option value="Mental Health">Mental Health</option>
+                  <option value="Academic Advising">Academic Advising</option>
+                  <option value="Study Skills">Study Skills</option>
+                  <option value="Tech Industry">Tech Industry</option>
+                  <option value="Interview Prep">Interview Prep</option>
+                </select>
+              </div>
+            </div>
+            
+            <!-- Mentors Grid -->
+            <div class="mentor-grid" id="mentorsGrid">
+              <!-- Mentors will be loaded here -->
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Appointments Section -->
+      <section id="appointments">
+        <!-- Upcoming Appointments -->
+        <div class="card mb-lg">
+          <div class="card-header">
+            <h2 class="card-title">Upcoming Appointments</h2>
+            <p class="card-subtitle">Your scheduled sessions</p>
+          </div>
+          <div class="card-body" id="upcomingAppointments">
+            <!-- Appointments will be loaded here -->
+          </div>
+        </div>
+        
+        <!-- Past Appointments -->
+        <div class="card">
+          <div class="card-header">
+            <h2 class="card-title">Past Appointments</h2>
+            <p class="card-subtitle">Your session history</p>
+          </div>
+          <div class="card-body" id="pastAppointments">
+            <!-- Past appointments will be loaded here -->
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  
+  <!-- Schedule Appointment Modal -->
+  <div class="modal-overlay" id="scheduleModal">
+    <div class="modal">
+      <div class="modal-header">
+        <h2 class="modal-title">Schedule Session with <span id="modalMentorName"></span></h2>
+        <button class="modal-close" onclick="closeModal('scheduleModal')">×</button>
+      </div>
+      <div class="modal-body">
+        <form id="scheduleForm">
+          <!-- Calendar -->
+          <div class="form-group">
+            <label class="form-label">Select Date</label>
+            <div id="calendarContainer"></div>
+          </div>
+          
+          <!-- Time Slots -->
+          <div class="form-group">
+            <label class="form-label">Select Time</label>
+            <div id="timeSlotsContainer">
+              <p class="text-center text-secondary">Please select a date</p>
+            </div>
+          </div>
+          
+          <!-- Appointment Type -->
+          <div class="form-group">
+            <label for="appointmentType" class="form-label">Session Type</label>
+            <select id="appointmentType" class="form-select" required>
+              <option value="">Select session type</option>
+              <option value="Career Advice">Career Advice</option>
+              <option value="Mental Health">Mental Health</option>
+              <option value="Academic Advising">Academic Advising</option>
+              <option value="General Mentorship">General Mentorship</option>
+            </select>
+          </div>
+          
+          <!-- Meeting Type -->
+          <div class="form-group">
+            <label for="meetingType" class="form-label">Meeting Type</label>
+            <select id="meetingType" class="form-select" required>
+              <option value="">Select meeting type</option>
+              <option value="virtual">Virtual (Online)</option>
+              <option value="physical">Physical (In-Person)</option>
+            </select>
+          </div>
+          
+          <!-- Meeting Link (for virtual) -->
+          <div class="form-group hidden" id="meetingLinkGroup">
+            <label for="meetingLink" class="form-label">Meeting Link</label>
+            <input 
+              type="url" 
+              id="meetingLink" 
+              class="form-input" 
+              placeholder="https://zoom.us/j/..."
+            >
+            <small class="text-secondary">Enter Zoom, Google Meet, or other video call link</small>
+          </div>
+          
+          <!-- Location (for physical) -->
+          <div class="form-group hidden" id="locationGroup">
+            <label for="location" class="form-label">Location</label>
+            <input 
+              type="text" 
+              id="location" 
+              class="form-input" 
+              placeholder="e.g., Campus Library, Room 204"
+            >
+          </div>
+          
+          <!-- Notes -->
+          <div class="form-group">
+            <label for="appointmentNotes" class="form-label">Notes (Optional)</label>
+            <textarea 
+              id="appointmentNotes" 
+              class="form-textarea" 
+              placeholder="What would you like to discuss?"
+            ></textarea>
+          </div>
+          
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline" onclick="closeModal('scheduleModal')">Cancel</button>
+            <button type="submit" class="btn btn-primary">Schedule Session</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container"></div>
+
+  <!-- Scripts -->
+  <script src="js/storage.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/scheduler.js"></script>
+  <script src="js/student-dashboard.js"></script>
+</body>
+</html>
