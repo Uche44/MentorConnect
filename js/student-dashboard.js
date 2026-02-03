@@ -1,7 +1,5 @@
 
-// ========================================
-// PAGE INITIALIZATION
-// ========================================
+
 
 document.addEventListener('DOMContentLoaded', () => {
   // Check authentication and role
@@ -15,9 +13,9 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-// ========================================
+
 // DASHBOARD LOADING
-// ========================================
+
 
 function loadStudentDashboard() {
   const currentUser = getCurrentUser();
@@ -83,9 +81,9 @@ function updateStatCard(id, value) {
   }
 }
 
-// ========================================
+
 // MENTORS SECTION
-// ========================================
+
 
 let allMentors = [];
 let filteredMentors = [];
@@ -161,9 +159,9 @@ function filterMentorsBySpecialty(specialty) {
   renderMentors();
 }
 
-// ========================================
+
 // APPOINTMENTS SECTION
-// ========================================
+
 
 /**
  * Load student appointments
@@ -210,9 +208,9 @@ async function renderAppointments(containerId, appointments, userRole) {
   container.innerHTML = cards.filter(card => card !== '').join('');
 }
 
-// ========================================
+
 // SCHEDULE MODAL
-// ========================================
+
 
 let selectedMentorId = null;
 
@@ -372,9 +370,9 @@ async function handleScheduleSubmit(event) {
   }
 }
 
-// ========================================
+
 // EVENT LISTENERS
-// ========================================
+
 
 function setupEventListeners() {
   // Search

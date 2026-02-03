@@ -3,9 +3,9 @@
  * Helper functions for common tasks
  */
 
-// ========================================
+
 // DATE & TIME UTILITIES
-// ========================================
+
 
 /**
  * Format date to readable string
@@ -98,9 +98,9 @@ function getDateRange(startDate, days) {
   return dates;
 }
 
-// ========================================
+
 // FORM VALIDATION
-// ========================================
+
 
 /**
  * Validate email format
@@ -141,9 +141,9 @@ function isRequired(value) {
   return value !== null && value !== undefined && value.toString().trim() !== '';
 }
 
-// ========================================
+
 // TOAST NOTIFICATIONS
-// ========================================
+
 
 /**
  * Show toast notification
@@ -185,9 +185,9 @@ function showToast(message, type = 'info', duration = 3000) {
   }, duration);
 }
 
-// ========================================
+
 // MODAL MANAGEMENT
-// ========================================
+
 
 /**
  * Open modal
@@ -225,9 +225,9 @@ function setupModalClose() {
   });
 }
 
-// ========================================
+
 // AVATAR UTILITIES
-// ========================================
+
 
 /**
  * Generate initials from name
@@ -250,9 +250,9 @@ function generateAvatar(user, size = 'md') {
   return `<div class="avatar avatar-${size}">${initials}</div>`;
 }
 
-// ========================================
+
 // SEARCH & FILTER
-// ========================================
+
 
 /**
  * Filter array by search term
@@ -296,9 +296,9 @@ function filterArray(array, filters) {
   });
 }
 
-// ========================================
+
 // DOM UTILITIES
-// ========================================
+
 
 /**
  * Safely get element by ID
@@ -351,9 +351,9 @@ function debounce(func, wait) {
   };
 }
 
-// ========================================
+
 // AUTHENTICATION GUARDS
-// ========================================
+
 
 /**
  * Redirect if not authenticated
@@ -403,9 +403,9 @@ function requireRole(requiredRole) {
   return true;
 }
 
-// ========================================
+
 // LOCAL STORAGE HELPERS
-// ========================================
+
 
 /**
  * Safely get from localStorage
@@ -433,9 +433,9 @@ function setToStorage(key, value) {
   }
 }
 
-// ========================================
+
 // INITIALIZATION
-// ========================================
+
 
 // Setup modal close handlers when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {

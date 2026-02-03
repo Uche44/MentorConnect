@@ -1,11 +1,7 @@
-/**
- * AUTHENTICATION LOGIC
- * Handle user registration, login, and session management
- */
 
-// ========================================
+
 // PAGE INITIALIZATION
-// ========================================
+
 
 document.addEventListener("DOMContentLoaded", () => {
   // Redirect if already authenticated
@@ -19,9 +15,9 @@ document.addEventListener("DOMContentLoaded", () => {
   setupSignupForm();
 });
 
-// ========================================
+
 // TAB SWITCHING
-// ========================================
+
 
 function setupAuthTabs() {
   const loginTab = document.getElementById("loginTab");
@@ -48,9 +44,9 @@ function setupAuthTabs() {
   }
 }
 
-// ========================================
+
 // LOGIN
-// ========================================
+
 
 function setupLoginForm() {
   const form = document.getElementById("loginForm");
@@ -151,9 +147,9 @@ function validateLoginForm(email, password) {
   return errors;
 }
 
-// ========================================
+
 // SIGNUP
-// ========================================
+
 
 function setupSignupForm() {
   const form = document.getElementById("signupForm");
@@ -319,9 +315,9 @@ async function validateSignupForm(formData) {
   return errors;
 }
 
-// ========================================
+
 // ROLE SELECTION
-// ========================================
+
 
 // Show/hide specialty field based on role
 document.addEventListener("DOMContentLoaded", () => {
@@ -339,9 +335,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// ========================================
+
 // FORM ERROR HANDLING
-// ========================================
+
 
 function displayFormErrors(formId, errors) {
   Object.entries(errors).forEach(([fieldId, message]) => {
@@ -392,9 +388,9 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// ========================================
+
 // LOGOUT
-// ========================================
+
 
 function handleLogout() {
   clearCurrentUser();

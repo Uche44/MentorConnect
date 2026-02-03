@@ -3,9 +3,9 @@
  * Mentor-specific dashboard functionality
  */
 
-// ========================================
+
 // PAGE INITIALIZATION
-// ========================================
+
 
 document.addEventListener('DOMContentLoaded', () => {
   // Check authentication and role
@@ -18,9 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
   setupEventListeners();
 });
 
-// ========================================
+
 // DASHBOARD LOADING
-// ========================================
+
 
 function loadMentorDashboard() {
   const currentUser = getCurrentUser();
@@ -90,9 +90,9 @@ function updateStatCard(id, value) {
   }
 }
 
-// ========================================
+
 // APPOINTMENTS SECTION
-// ========================================
+
 
 /**
  * Load mentor appointments
@@ -145,9 +145,9 @@ async function renderAppointments(containerId, appointments, userRole) {
   container.innerHTML = cards.filter(card => card !== '').join('');
 }
 
-// ========================================
+
 // PROFILE MANAGEMENT
-// ========================================
+
 
 /**
  * Open edit profile modal
@@ -220,9 +220,9 @@ function handleProfileUpdate(event) {
   }
 }
 
-// ========================================
+
 // AVAILABILITY MANAGEMENT
-// ========================================
+
 
 /**
  * Open manage availability modal
@@ -300,9 +300,9 @@ function regenerateAvailability() {
   }
 }
 
-// ========================================
+
 // EVENT LISTENERS
-// ========================================
+
 
 function setupEventListeners() {
   // Edit profile button

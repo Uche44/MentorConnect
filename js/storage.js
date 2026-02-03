@@ -1,7 +1,4 @@
-/**
- * STORAGE UTILITIES
- * LocalStorage management for users and appointments
- */
+
 
 // Storage keys
 const STORAGE_KEYS = {
@@ -10,9 +7,9 @@ const STORAGE_KEYS = {
   CURRENT_USER: 'smp_current_user'
 };
 
-// ========================================
+
 // INITIALIZATION
-// ========================================
+
 
 /**
  * Initialize storage with seed data if empty
@@ -136,9 +133,9 @@ function generateAvailability() {
   return slots;
 }
 
-// ========================================
+
 // USER OPERATIONS
-// ========================================
+
 
 /**
  * Get all users
@@ -227,9 +224,9 @@ function deleteUser(userId) {
   localStorage.setItem(STORAGE_KEYS.USERS, JSON.stringify(filtered));
 }
 
-// ========================================
+
 // APPOINTMENT OPERATIONS
-// ========================================
+
 
 /**
  * Get all appointments
@@ -385,9 +382,9 @@ function completeAppointment(appointmentId) {
   return updateAppointment(appointmentId, { status: 'completed' });
 }
 
-// ========================================
+
 // SESSION MANAGEMENT
-// ========================================
+
 
 /**
  * Get current logged-in user
@@ -429,9 +426,9 @@ function isAuthenticated() {
   return getCurrentUser() !== null;
 }
 
-// ========================================
+
 // UTILITY FUNCTIONS
-// ========================================
+
 
 /**
  * Generate unique ID
@@ -440,19 +437,12 @@ function generateId() {
   return 'id_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
 }
 
-/**
- * Simple password hashing (NOT SECURE - for demo only)
- * In production, use proper server-side hashing
- */
+
 function hashPassword(password) {
-  // This is NOT secure - just for demo purposes
-  // In a real app, passwords should be hashed server-side
   return btoa(password);
 }
 
-/**
- * Verify password
- */
+
 function verifyPassword(password, hash) {
   return hashPassword(password) === hash;
 }

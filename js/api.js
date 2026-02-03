@@ -1,13 +1,11 @@
-/**
- * API SERVICE
- * Handles communication with JSON Server backend
- */
 
-const API_BASE_URL = 'http://localhost:3000';
 
-// ========================================
+const API_BASE_URL =
+  window.location.hostname === "localhost"
+    ? "http://localhost:3000"
+    : "https://student-mentor-api-vrea.onrender.com";
+
 // API HELPER FUNCTIONS
-// ========================================
 
 /**
  * Make API request with error handling
@@ -33,9 +31,8 @@ async function apiRequest(endpoint, options = {}) {
   }
 }
 
-// ========================================
+
 // USER API (Sync to JSON Server on signup)
-// ========================================
 
 /**
  * Sync user to JSON Server after signup
@@ -90,9 +87,8 @@ async function getMentorsFromServer() {
   }
 }
 
-// ========================================
+
 // APPOINTMENT API (JSON Server only)
-// ========================================
 
 /**
  * Get all appointments from server

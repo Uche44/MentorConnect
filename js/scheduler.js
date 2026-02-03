@@ -1,11 +1,6 @@
-/**
- * SCHEDULER
- * Appointment scheduling functionality
- */
 
-// ========================================
 // CALENDAR RENDERING
-// ========================================
+
 
 /**
  * Render calendar for a given month
@@ -65,9 +60,9 @@ function renderCalendar(containerId, year, month, onDateSelect) {
   container.innerHTML = html;
 }
 
-// ========================================
+
 // TIME SLOT RENDERING
-// ========================================
+
 
 /**
  * Render available time slots for a mentor on a specific date
@@ -139,9 +134,9 @@ function selectTimeSlot(time) {
   }
 }
 
-// ========================================
+
 // APPOINTMENT BOOKING
-// ========================================
+
 
 /**
  * Book an appointment
@@ -179,9 +174,9 @@ function bookAppointment(studentId, mentorId, date, time, type, notes = '') {
   }
 }
 
-// ========================================
+
 // APPOINTMENT ACTIONS
-// ========================================
+
 
 /**
  * Cancel appointment
@@ -268,9 +263,9 @@ function handleCompleteAppointment(appointmentId) {
   }
 }
 
-// ========================================
+
 // APPOINTMENT CARD RENDERING
-// ========================================
+
 
 /**
  * Render appointment card
@@ -391,9 +386,9 @@ function getStatusBadgeType(status) {
   return types[status] || 'primary';
 }
 
-// ========================================
+
 // CALENDAR STATE MANAGEMENT
-// ========================================
+
 
 let currentCalendarMonth = new Date().getMonth();
 let currentCalendarYear = new Date().getFullYear();
